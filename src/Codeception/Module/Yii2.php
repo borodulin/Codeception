@@ -155,6 +155,7 @@ class Yii2 extends Framework implements ActiveRecord, PartedModule
     {
         if ($this->config['transaction'] === null) {
             $this->config['transaction'] = $this->config['cleanup'];
+            $this->_setConfig($this->config);
         }
 
         if (!is_file(Configuration::projectDir() . $this->config['configFile'])) {
